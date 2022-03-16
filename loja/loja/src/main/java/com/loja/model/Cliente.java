@@ -47,7 +47,7 @@ public class Cliente implements Serializable {
 	private Sexo sexo;
 	
 	@Column(name="idade")
-	@NotNull(message="campo obrigatório, digite a idade do cliente.")
+	@NotNull(message="Campo obrigatório, digite a idade do cliente.")
     private Integer idade;
 	 
 	
