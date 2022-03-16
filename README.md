@@ -1,4 +1,3 @@
-# Projeto-IHM
 
 - 👋 Hi, I’m  Thiago Antonio
 - 👀 I’m interested in estudar e aprender coisas novas para área dea tecnologia
