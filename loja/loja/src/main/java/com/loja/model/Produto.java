@@ -49,7 +49,7 @@ public class Produto implements Serializable{
 	private Categoria categoria;
 	
 	@Column(name ="quantidade") 
-	@NotNull(message="campo obrigatório, digite a quantidade do produto.")
+	@NotNull(message="Campo obrigatório, digite a quantidade do produto.")
 	private Integer quantidade;
 	
 //	@OneToMany 
