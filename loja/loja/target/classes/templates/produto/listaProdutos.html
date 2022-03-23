@@ -1,0 +1,53 @@
+
+<html th:replace="~{base/base :: layout (~{:: main})}">
+  <main>
+
+    <div class="container" style="margin-top: 50px;">
+      <h1>Listas de Produtos</h1>
+      <hr>
+      <br>
+      
+     <table class="table table-bordered table-hover">
+            <thead>
+                <th scope="col">Nome</th>
+                <th scope="col">Preço</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Quantidade</th>
+                <th scope="col">Opções</th>
+            </thead>
+      <tbody>
+        
+       <tr th:each="produto : ${listarProdutos}">
+       
+       <td th:text="${produto.nome}"><span></span></td>
+       <td th:text="${produto.preco}"></td>
+       <td th:text="${produto.categoria}"></td>
+       <td th:text="${produto.quantidade}"></td>
+       
+       <td>
+           <a class="btn btn-primary" style="width: 120px" th:href="@{/alterar-produtos/{id}(id=${produto.id})}"> 
+           <i class="fas fa-edit"></i> EDITAR</a>
+           &nbsp;           
+           <a class="btn btn-danger" style="width: 120px" onclick="return confirm('Deseja realmente excluir o produto?');" th:href="@{/excluir-produtos/{id}(id=${produto.id})}">
+           <i class="bi-trash"></i> EXCLUIR</a>
+           
+       </td>
+       
+       </tr>
+       </div>
+      
+      </tbody>
+    
+    </table> 
+    
+      <div class="col-md-9 form-group offset-md-5 " style="margin-top: 20px">
+         <a th:href="@{/home}"><button class="btn btn-danger">VOLTAR</button></a>
+      </div>  
+      &nbsp;  &nbsp;  &nbsp;  &nbsp;
+      
+      <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+      
+    </div>  
+    
+    </main>
+</html>
