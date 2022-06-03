@@ -54,7 +54,7 @@ public class Cliente implements Serializable {
 	@Min(value=12, message="A idade do cliente minima deve ser 12 anos.")
 	@Max(value=100, message="A idade do cliente não deve passar de 100 anos.")
 	@Pattern(regexp = "\\d+", message="Somente números válidos no campo idade.")
-    private String idade;
+        private String idade;
 
 	public Integer getId() {
 		return id;
