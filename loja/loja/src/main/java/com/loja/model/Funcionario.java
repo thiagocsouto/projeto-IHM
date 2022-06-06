@@ -35,7 +35,7 @@ public class Funcionario implements Serializable {
 	
 	@Column(name="nome")
 	@Size(min=3, max=50, message="O nome do funcionário deverá conter entre 3 e 50 caracteres para continuar.")
-	@Pattern(regexp = "^[A-Z][a-zA-ZáàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]*$", message="O primeiro nome não deve começar com uma letra minúscula, número ou caractere especial.")
+	@Pattern(regexp = "^[A-Z][a-zA-ZáàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÒÖÚÇÑ ]*$", message="O nome não deve começar com uma letra minúscula, número ou caractere especial.")
 	private String nome; 
 	
 	@Column(name="matricula")
