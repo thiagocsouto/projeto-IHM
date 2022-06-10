@@ -14,7 +14,7 @@ import com.loja.model.Cliente;
 import com.loja.service.ClienteService;
 
 @SpringBootTest
-public class clienteServiceTest {
+public class ClienteServiceTest {
 	
 	@Autowired
 	private ClienteService clienteService;
