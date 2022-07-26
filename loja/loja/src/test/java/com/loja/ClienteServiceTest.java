@@ -21,8 +21,12 @@ public class ClienteServiceTest {
 	
 	
 	@Test
-    void testeParaVerficarCadastro() {
-		Cliente cliente = new Cliente("Ana Aldilha", "418.102.602-72", Sexo.FEMININO, Integer.toString(26));  
+        void testeParaVerficarCadastro() {
+		Cliente cliente = new Cliente();  
+		cliente.setNome("Ana Aldilha");
+		cliente.setCpf("418.102.602-72");
+		cliente.setSexo(Sexo.FEMININO);
+		cliente.setIdade(Integer.toString(26));
 		Cliente salvarCliente = clienteService.salvarCliente(cliente);
 		
 		assertNotNull(salvarCliente);
@@ -30,14 +34,15 @@ public class ClienteServiceTest {
 	
 	@Test
 	void testeNaoPodeIgualCpf() {
-		Cliente cliente = new Cliente("Ana Aldilha", "042.588.112-11", Sexo.FEMININO, Integer.toString(26)); 
+		Cliente cliente = new Cliente(); 
+		cliente.setNome("Amanda Carolina");
+		cliente.setCpf( "042.588.112-11");
+		cliente.setSexo(Sexo.FEMININO);
+		cliente.setIdade(Integer.toString(20));
+
 		NegocioException exception = assertThrows(NegocioException.class, ()-> clienteService.salvarCliente(cliente));
 	
 	   assertEquals("C.P.F já cadastrado no sistema.", exception.getMessage());
 	}
 	
-	
-
-
-
 }
