@@ -1,5 +1,9 @@
 package com.loja.enums;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter @AllArgsConstructor
 public enum Categoria {
 	
 	RELÓGIO("relógio"), 
@@ -13,12 +17,6 @@ public enum Categoria {
 	TECLADO("teclado"),
 	TV("tv");
 	
-	
-	
 	private String Categoria;
-
-	private Categoria(String categoria) {
-		Categoria = categoria;
-	}
 
 }

@@ -1,7 +1,6 @@
 package com.loja.model;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,7 +9,6 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -21,10 +19,15 @@ import javax.validation.constraints.Size;
 import com.loja.enums.Categoria;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity
+@ToString @Getter @Setter @NoArgsConstructor @AllArgsConstructor
+@Builder
 @Table(name="produto")
 public class Produto implements Serializable{
 	
@@ -54,38 +57,5 @@ public class Produto implements Serializable{
 	@Max(value=250, message="Quantidade máxima de 250 produtos foi atiginda.")
 	@Pattern(regexp = "\\d+", message="Somente números válidos no campo idade.")
 	private String quantidade;
-	
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	
-	public Categoria getCategoria() {
-		return categoria;
-	}
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
-	}
-	
-	public String getPreco() {
-		return preco;
-	}
-	public void setPreco(String preco) {
-		this.preco = preco;
-	}
-	public String getQuantidade() {
-		return quantidade;
-	}
-	public void setQuantidade(String quantidade) {
-		this.quantidade = quantidade;
-	}
 	
 }

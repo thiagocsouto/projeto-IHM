@@ -26,30 +26,35 @@
        
        <td>
            <a class="btn btn-primary" th:href="@{/alterar-produtos/{id}(id=${produto.id})}"> 
-           <i class="fas fa-edit" style="font-size: 20px"></i></a>
-           &nbsp;           
-           <!-- Button trigger modal -->
-		   <a class="btn btn-danger" data-bs-toggle="modal"
-				data-bs-target="#produtoModal"><i class="bi-trash" style="font-size: 20px"></i></a>
+              <i class="fas fa-edit" style="font-size: 20px"></i>
+           </a>
+           &nbsp;        
+           <a class="btn btn-danger" th:href="@{/excluir-produtos/{id}(id=${produto.id})}">
+              <i class="bi-trash" style="font-size: 20px"></i>
+		   </a>   
+<!--            Button trigger modal -->
+<!-- 		   <a class="btn btn-danger" data-bs-toggle="modal" -->
+<!-- 				data-bs-target="#produtoModal"><i class="bi-trash" style="font-size: 20px"></i> -->
+<!-- 			</a> -->
 
-			<!-- Modal -->
-			<div class="modal fade" id="produtoModal" tabindex="-1"
-				aria-labelledby="produtoModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="produtoModalLabel">Infotec</h5>
-							<button type="button" class="btn-close" data-bs-dismiss="modal"
-								aria-label="Close"></button>
-						</div>
-						<div class="modal-body">Deseja realmente excluir o cliente?</div>
-						<div class="modal-footer">
-							<a th:href="@{/excluir-produtos/{id}(id=${produto.id})}"><button type="button" class="btn btn-success" >Continuar</button></a>
-							<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Voltar</button>
-						</div>
-					</div> 
-				</div>
-			</div>
+<!-- 			<!-- Modal --> 
+<!-- 			<div class="modal fade" id="produtoModal" tabindex="-1" -->
+<!-- 				aria-labelledby="produtoModalLabel" aria-hidden="true"> -->
+<!-- 				<div class="modal-dialog"> -->
+<!-- 					<div class="modal-content"> -->
+<!-- 						<div class="modal-header"> -->
+<!-- 							<h5 class="modal-title" id="produtoModalLabel">Infotec</h5> -->
+<!-- 							<button type="button" class="btn-close" data-bs-dismiss="modal" -->
+<!-- 								aria-label="Close"></button> -->
+<!-- 						</div> -->
+<!-- 						<div class="modal-body">Deseja realmente excluir o cliente?</div> -->
+<!-- 						<div class="modal-footer"> -->
+<!-- 							<a th:href="@{/excluir-produtos/{id}(id=${produto.id})}"><button type="button" class="btn btn-success" >Continuar</button></a> -->
+<!-- 							<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Voltar</button> -->
+<!-- 						</div> -->
+<!-- 					</div>  -->
+<!-- 				</div> -->
+<!-- 			</div> -->
            
        </td>
        

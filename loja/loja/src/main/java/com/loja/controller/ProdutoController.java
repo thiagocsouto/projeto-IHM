@@ -19,7 +19,15 @@ import com.loja.service.ProdutoService;
 public class ProdutoController {
 	
 	@Autowired
-	private ProdutoService produtoService;
+	private ProdutoService produtoService;	
+	
+	@GetMapping("/lista-produtos")
+	public ModelAndView listaProdutos() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("produto/listaProdutos");
+		mv.addObject("listarProdutos", produtoService.listarProduto());
+		return mv;  
+	} 
 	
 	@GetMapping("/cadastrar-produtos")
 	public ModelAndView cadastroProduto(Produto produto) {
@@ -63,28 +71,11 @@ public class ProdutoController {
 	}
 		return mv;  
 	}
-	
+
 	@GetMapping("/excluir-produtos/{id}")
 	public String excluirProduto(@PathVariable("id") Integer id) {
 		produtoService.deletarId(id);
 		return "redirect:/lista-produtos"; 
 	}  
-	
-	@GetMapping("/lista-produtos")
-	public ModelAndView listaProdutos() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("produto/listaProdutos");
-		mv.addObject("listarProdutos", produtoService.listarProduto());
-		return mv;  
-	} 
-	
-//	@GetMapping("/{id}")
-//	public ModelAndView detalhesEventosId(@PathVariable("id") Integer id) {
-//		Optional<Evento> evento = eventoService.listarEventoId(id);
-//		ModelAndView mv = new ModelAndView("detalhes");
-//		mv.addObject("evento", evento);
-//		return mv;  
-//	}
-
 
 }

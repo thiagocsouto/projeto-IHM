@@ -1,5 +1,9 @@
 package com.loja.enums;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter @AllArgsConstructor
 public enum Sexo {
 	
 	MASCULINO("masculino"),
@@ -7,10 +11,5 @@ public enum Sexo {
 	OUTRO("outro");
 	
 	private String Sexo;
-
-	private Sexo(String sexo) {
-		Sexo = sexo;
-	} 
 	
-
 } 

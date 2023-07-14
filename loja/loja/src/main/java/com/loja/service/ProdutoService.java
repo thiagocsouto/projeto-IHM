@@ -5,7 +5,6 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import com.loja.model.Produto;
 import com.loja.repository.ProdutoRepository;
@@ -28,7 +27,6 @@ public class ProdutoService {
 	public Optional<Produto> listarProdutoId(Integer id) {
 		return produtoRepository.findById(id);
 	}
-
 
 	public void deletarId(Integer id) { 
 		 produtoRepository.deleteById(id);

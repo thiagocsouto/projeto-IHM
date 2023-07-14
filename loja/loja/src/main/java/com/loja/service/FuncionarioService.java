@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.loja.exception.NegocioException;
-import com.loja.model.Cliente;
 import com.loja.model.Funcionario;
 import com.loja.repository.FuncionarioRepository;
 
@@ -24,8 +23,6 @@ public class FuncionarioService {
 		if (cpfExiste!= null) {
 			throw new NegocioException("C.P.F já cadastrado no sistema");
 		}
-		
-		
 		return funcionarioRepository.save(funcionario);
 	}
 	

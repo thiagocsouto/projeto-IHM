@@ -2,8 +2,6 @@ package com.loja.controller;
 
 import java.util.Optional;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +21,14 @@ public class FuncionarioController {
 	
 	@Autowired
 	private FuncionarioService funcionarioService;
+	
+	@GetMapping("/lista-funcionarios")
+	public ModelAndView listaFuncionarios() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("funcionario/listaFuncionarios");
+		mv.addObject("listarFuncionario", funcionarioService.listarFuncionario());
+		return mv;   
+	} 
 	
 	@GetMapping("/adicionar-funcionarios")
 	public ModelAndView Adicionar(Funcionario funcionario) {
@@ -52,14 +58,6 @@ public class FuncionarioController {
 			}
 		}
 	}
-	
-	@GetMapping("/lista-funcionarios")
-	public ModelAndView listaFuncionarios() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("funcionario/listaFuncionarios");
-		mv.addObject("listarFuncionario", funcionarioService.listarFuncionario());
-		return mv;   
-	} 
 	
 	@GetMapping("/alterar-funcionarios/{id}") 
 	public ModelAndView alterarFuncionario(@PathVariable("id") Integer id) {

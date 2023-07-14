@@ -30,30 +30,35 @@
         
        <td>
            <a class="btn btn-primary" th:href="@{alterar-funcionarios/{id}(id=${funcionario.id})}">
-           <i class="fas fa-edit" style=" font-size: 20px"></i></a>
-           &nbsp;                  
-           <!-- Button trigger modal -->
-		   <a class="btn btn-danger" data-bs-toggle="modal"
-				data-bs-target="#funcionarioModal"><i class="bi-trash" style="font-size: 20px"></i></a>
+                   <i class="fas fa-edit" style=" font-size: 20px"></i>
+           </a>
+           &nbsp;      
+           <a class="btn btn-danger" th:href="@{excluir-funcionarios/{id}(id=${funcionario.id})}">
+                   <i class="bi-trash" style="font-size: 20px"></i>
+		   </a>            
+<!--            Button trigger modal -->
+<!-- 		   <a class="btn btn-danger" data-bs-toggle="modal" -->
+<!-- 				data-bs-target="#funcionarioModal"><i class="bi-trash" style="font-size: 20px"></i> -->
+<!-- 			</a> -->
 
-			<!-- Modal -->
-			<div class="modal fade" id="funcionarioModal" tabindex="-1"
-				aria-labelledby="funcionarioModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="funcaionrioModalLabel">Infotec</h5>
-							<button type="button" class="btn-close" data-bs-dismiss="modal"
-								aria-label="Close"></button>
-						</div>
-						<div class="modal-body">Deseja realmente excluir o funcionario?</div>
-						<div class="modal-footer">
-							<a th:href="@{/excluir-funcionarios/{id}(id=${funcionario.id})}"><button type="button" class="btn btn-success" >Continuar</button></a>
-							<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Voltar</button>
-						</div>
-					</div> 
-				</div>
-			</div>
+<!-- 			<!-- Modal --> 
+<!-- 			<div class="modal fade" id="funcionarioModal" tabindex="-1" -->
+<!-- 				aria-labelledby="funcionarioModalLabel" aria-hidden="true"> -->
+<!-- 				<div class="modal-dialog"> -->
+<!-- 					<div class="modal-content"> -->
+<!-- 						<div class="modal-header"> -->
+<!-- 							<h5 class="modal-title" id="funcaionrioModalLabel">Infotec</h5> -->
+<!-- 							<button type="button" class="btn-close" data-bs-dismiss="modal" -->
+<!-- 								aria-label="Close"></button> -->
+<!-- 						</div> -->
+<!-- 						<div class="modal-body">Deseja realmente excluir o funcionario?</div> -->
+<!-- 						<div class="modal-footer"> -->
+<!-- 							<a th:href="@{/excluir-funcionarios/{id}(id=${funcionario.id})}"><button type="button" class="btn btn-success" >Continuar</button></a> -->
+<!-- 							<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Voltar</button> -->
+<!-- 						</div> -->
+<!-- 					</div>  -->
+<!-- 				</div> -->
+<!-- 			</div> -->
        </td>  
       </tr>
       

@@ -22,6 +22,14 @@ public class ClienteController {
 	@Autowired
 	private ClienteService clienteService; 
 	
+	@GetMapping("/lista-clientes")
+	public ModelAndView listaClientes() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("cliente/listaClientes");
+		mv.addObject("listarClientes", clienteService.listarCliente());
+		return mv;   
+	}  
+	
 	@GetMapping("/adicionar-clientes")
 	public ModelAndView Adicionar(Cliente cliente) {
 		ModelAndView mv = new ModelAndView();
@@ -51,14 +59,6 @@ public class ClienteController {
 		}
 		
 	}
-	
-	@GetMapping("/lista-clientes")
-	public ModelAndView listaClientes() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("cliente/listaClientes");
-		mv.addObject("listarClientes", clienteService.listarCliente());
-		return mv;   
-	}  
 	
 	@GetMapping("/alterar-clientes/{id}") 
 	public ModelAndView alterar(@PathVariable("id") Integer id) {

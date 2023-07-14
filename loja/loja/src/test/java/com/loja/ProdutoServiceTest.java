@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.loja.enums.Categoria;
-import com.loja.enums.Sexo;
 import com.loja.model.Produto;
 import com.loja.service.ProdutoService;
 

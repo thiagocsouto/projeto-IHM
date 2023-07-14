@@ -1,5 +1,9 @@
 package com.loja.enums;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@Getter @AllArgsConstructor
 public enum Cargo {
 	
 	GERENTE("gerente"),
@@ -13,8 +17,4 @@ public enum Cargo {
 	
 	private String cargo;
 
-	private Cargo(String cargo) {
-		this.cargo = cargo;
-	}
-	
 }
