@@ -69,11 +69,16 @@
         <!--ADMISSÃO-->
         <div class="row">
          <div class="col-md-6 form-group offset-md-3" style="margin-top: 10px">
-         <label><b>Data de Admissão:</b></label>
-         <input class="form-control" placeholder="Ex: 01/01/2022" style="margin-top: 10px" th:field="*{admissao}">      
-         <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('admissao')}" style="margin-top: 15px">
+         <label for="admissao" th:classappend="${#fields.hasErrors('admissao') ? 'text-danger' : ''}"><b>Data de Admissão:</b></label>
+         <div class="input-group date form-datepicker" id="admissao" data-target-input="nearest">
+             <div class="input-group-append" data-target="#admissao" data-toggle="datetimepicker">
+                 <div class="input-group-text" th:styleappend="${#fields.hasErrors('admissao') ? 'border: 1px solid #dc3545 !important; color: white !important; background-color: #dc3545 !important' : ''}" style="margin-top: 10px"><i class="fa fa-calendar"></i></div>
+             </div>
+             <input type="text" class="form-control datetimepicker-input" data-target="#admissao"  placeholder="Ex: 01/01/2022" style="margin-top: 10px" th:field="*{admissao}"> 
+         </div>        
+            <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('admissao')}" style="margin-top: 15px">
                <label class="validation-message" th:errors="*{admissao}"></label>
-              </div>
+            </div>
         </div>
        </div> 
    

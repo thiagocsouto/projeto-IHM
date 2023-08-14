@@ -22,12 +22,17 @@
     <!--Preço-->
        <div class="row">
          <div class="col-md-6 form-group offset-md-3" style="margin-top: 10px">
-         <label><b>Preço do produto:</b></label>
-         <input class="form-control" placeholder="Ex: 28,00" style="margin-top: 10px" th:field="*{preco}">  
-         <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('preco')}" style="margin-top: 15px">
-            <label class="validation-message" th:errors="*{preco}"></label>
-         </div>    
-        </div>
+         <label><b>Preço:</b></label>
+         <div class="input-group" id="valor" data-target-input="nearest">
+             <div class="input-group-prepend" data-target="#preco" data-toggle="preco">
+                <div class="input-group-text text-bold" th:styleappend="${#fields.hasErrors('preco') ? 'border: 1px solid #dc3545 !important; color: white !important; background-color: #dc3545 !important' : ''}" style="margin-top: 10px">R$</div>
+             </div>
+             <input type="text" class="form-control mask-money" placeholder="Ex: 180,00" style="margin-top: 10px" maxlength="10" th:field="*{preco}">
+         </div>
+            <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('preco')}" style="margin-top: 15px">
+              <label class="validation-message" th:errors="*{preco}"></label>
+            </div>      
+        </div> 
        </div> 
         <!--Categoria-->
          <div class="row">
@@ -43,11 +48,11 @@
 		 <div class="row">
          <div class="col-md-6 form-group offset-md-3" style="margin-top: 10px">
          <label><b>Quantidade de produto:</b></label>
-         <input class="form-control" placeholder="Ex: 18" style="margin-top: 10px" th:field="*{quantidade}">  
+         <input type="number" min="1" max="9999" class="form-control" placeholder="Ex: 18" style="margin-top: 10px" th:field="*{quantidade}">  
          <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('quantidade')}" style="margin-top: 15px">
             <label class="validation-message" th:errors="*{quantidade}"></label>
          </div>    
-        </div>
+        </div> 
        </div> 
 		
 			 
